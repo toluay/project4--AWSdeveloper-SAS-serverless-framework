@@ -8,7 +8,7 @@ import {ToDoAccess} from "../dataLayer/ToDoAccess";
 const uuidv4 = require('uuid/v4');
 const toDoAccess = new ToDoAccess();
 
-export async function getTodosForUser(jwtToken: string): Promise<TodoItem[]> {
+export async function getAllToDo(jwtToken: string): Promise<TodoItem[]> {
     const userId = parseUserId(jwtToken);
     return toDoAccess.getAllToDo(userId);
 }

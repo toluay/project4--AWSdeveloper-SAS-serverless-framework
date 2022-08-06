@@ -1,7 +1,7 @@
 # TODO: Change the name of the org 
 org: toluayantunde
-app: serverless-udapeopleapplication
-service: serverless-udapeopleapplication
+app: serverless-udapeopleapplication12
+service: serverless-udapeopleapplication12
 
 plugins:
   - serverless-webpack
@@ -25,11 +25,11 @@ provider:
   # Use these variables in the functions and resouorces section below. For example, 
   # ${self:provider.environment.ATTACHMENT_S3_BUCKET}
   environment:
-    PROJECT_NAME: serverless
+    PROJECT_NAME: serverless-udapeopleapplication12
     TODOS_TABLE: serverless1292-${self:provider.stage}
     # TODOS_CREATED_AT_INDEX: CreatedAtIndex
     S3_BUCKET_NAME: serverles1292-${self:provider.stage}
-    SIGNED_URL_EXPIRATION: 300
+    # SIGNED_URL_EXPIRATION: 300
 
   logs:
     # Enable API Gateway logs
