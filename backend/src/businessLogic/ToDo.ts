@@ -8,7 +8,7 @@ import {ToDoAccess} from "../dataLayer/ToDoAccess";
 const uuidv4 = require('uuid/v4');
 const toDoAccess = new ToDoAccess();
 
-export async function getAllToDo(jwtToken: string): Promise<TodoItem[]> {
+export async function getTodosForUser(jwtToken: string): Promise<TodoItem[]> {
     const userId = parseUserId(jwtToken);
     return toDoAccess.getAllToDo(userId);
 }
@@ -28,12 +28,12 @@ export function createToDo(createTodoRequest: CreateTodoRequest, jwtToken: strin
     });
 }
 
-export function updateToDo(updateTodoRequest: UpdateTodoRequest, todoId: string, jwtToken: string): Promise<TodoUpdate> {
+export function updateTodo(updateTodoRequest: UpdateTodoRequest, todoId: string, jwtToken: string): Promise<TodoUpdate> {
     const userId = parseUserId(jwtToken);
     return toDoAccess.updateToDo(updateTodoRequest, todoId, userId);
 }
 
-export function deleteToDo(todoId: string, jwtToken: string): Promise<string> {
+export function deleteTodo(todoId: string, jwtToken: string): Promise<string> {
     const userId = parseUserId(jwtToken);
     return toDoAccess.deleteToDo(todoId, userId);
 }
